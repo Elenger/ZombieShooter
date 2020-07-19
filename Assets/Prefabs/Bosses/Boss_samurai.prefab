@@ -963,6 +963,14 @@ GameObject:
   m_Component:
   - component: {fileID: 8766429270135386453}
   - component: {fileID: 8713489207941712385}
+  - component: {fileID: 4101893432916697671}
+  - component: {fileID: 3656827223654164461}
+  - component: {fileID: -9020910257702844810}
+  - component: {fileID: 7865671687180470229}
+  - component: {fileID: -440279699492013580}
+  - component: {fileID: 8250100981562001038}
+  - component: {fileID: 1194591239152470496}
+  - component: {fileID: 4121727167130947242}
   m_Layer: 0
   m_Name: Boss_samurai
   m_TagString: Untagged
@@ -1005,6 +1013,126 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4101893432916697671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8772514269908727545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbb798f630a0cfe4db38d64b96a35a8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveController: {fileID: 0}
+--- !u!114 &3656827223654164461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8772514269908727545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b36533a9b7d25a44a9b4475d7cc91042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mobInfo: {fileID: 1194591239152470496}
+  _navMeshAgent: {fileID: -9020910257702844810}
+  target: {fileID: 0}
+--- !u!195 &-9020910257702844810
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8772514269908727545}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &7865671687180470229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8772514269908727545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f61816d79780c84c91f031e2aba6085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mobInfo: {fileID: 1194591239152470496}
+  target: {fileID: 0}
+  characterHealth: {fileID: 0}
+--- !u!114 &-440279699492013580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8772514269908727545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7862422ad7b85b641aeabf55f6d0449d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mobHealth: {fileID: 8250100981562001038}
+--- !u!114 &8250100981562001038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8772514269908727545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 221e2741e6471784bba20b24f665c18d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mobInfo: {fileID: 1194591239152470496}
+  _mobDeath: {fileID: 0}
+  _death: {fileID: 4101893432916697671}
+--- !u!114 &1194591239152470496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8772514269908727545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ff3282f3672ee94db3db0a6bb947a75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mob: {fileID: 11400000, guid: 93d164e094526164aa7aa457bb93d342, type: 2}
+--- !u!136 &4121727167130947242
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8772514269908727545}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.1, z: 0}
 --- !u!1 &8772526013401338881
 GameObject:
   m_ObjectHideFlags: 0

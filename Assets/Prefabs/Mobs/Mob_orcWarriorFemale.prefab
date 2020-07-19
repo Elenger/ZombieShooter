@@ -1061,6 +1061,13 @@ GameObject:
   - component: {fileID: 95276321655814372}
   - component: {fileID: -7069697042923155485}
   - component: {fileID: 6404480477695098831}
+  - component: {fileID: -8867495983142339404}
+  - component: {fileID: -5586766310961127775}
+  - component: {fileID: 972760794748969599}
+  - component: {fileID: -218122182351078267}
+  - component: {fileID: -3425749126293251969}
+  - component: {fileID: -4610079631952363847}
+  - component: {fileID: 3547350137988401193}
   m_Layer: 0
   m_Name: Mob_orcWarriorFemale
   m_TagString: Untagged
@@ -1115,8 +1122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b36533a9b7d25a44a9b4475d7cc91042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mobInfo: {fileID: -4610079631952363847}
   _navMeshAgent: {fileID: 6404480477695098831}
-  targetTransform: {fileID: 0}
+  target: {fileID: 0}
 --- !u!195 &6404480477695098831
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1139,6 +1147,102 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-8867495983142339404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895674993587318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63d242d2b14de7a4d9fae6a1306e163a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-5586766310961127775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895674993587318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8010c177967d5bf4aa24bd19583745a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _poolObject: {fileID: -8867495983142339404}
+  bossCreate: {fileID: 0}
+--- !u!114 &972760794748969599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895674993587318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f61816d79780c84c91f031e2aba6085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mobInfo: {fileID: -4610079631952363847}
+  target: {fileID: 0}
+  characterHealth: {fileID: 0}
+--- !u!114 &-218122182351078267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895674993587318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7862422ad7b85b641aeabf55f6d0449d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mobHealth: {fileID: -3425749126293251969}
+--- !u!114 &-3425749126293251969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895674993587318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 221e2741e6471784bba20b24f665c18d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mobInfo: {fileID: -4610079631952363847}
+  _mobDeath: {fileID: -5586766310961127775}
+  _death: {fileID: -5586766310961127775}
+--- !u!114 &-4610079631952363847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895674993587318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ff3282f3672ee94db3db0a6bb947a75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mob: {fileID: 11400000, guid: ce9ad0ee43ab86642b98c5ac5857bcb6, type: 2}
+--- !u!136 &3547350137988401193
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895674993587318}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.1, z: 0}
 --- !u!1 &1898052537917976
 GameObject:
   m_ObjectHideFlags: 0

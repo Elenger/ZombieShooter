@@ -851,6 +851,13 @@ GameObject:
   - component: {fileID: 95327824541018324}
   - component: {fileID: 3428260015487973797}
   - component: {fileID: 4232585308510564209}
+  - component: {fileID: -8597529243964511879}
+  - component: {fileID: 8086170596820381952}
+  - component: {fileID: 5799176318385743518}
+  - component: {fileID: 1622913539008071274}
+  - component: {fileID: 7517741328108751007}
+  - component: {fileID: -587757219719870426}
+  - component: {fileID: 1819194464121889932}
   m_Layer: 0
   m_Name: Mob_orcMale
   m_TagString: Untagged
@@ -905,8 +912,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b36533a9b7d25a44a9b4475d7cc91042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mobInfo: {fileID: -587757219719870426}
   _navMeshAgent: {fileID: 4232585308510564209}
-  targetTransform: {fileID: 0}
+  target: {fileID: 0}
 --- !u!195 &4232585308510564209
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -929,6 +937,102 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-8597529243964511879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772087364770496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63d242d2b14de7a4d9fae6a1306e163a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8086170596820381952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772087364770496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8010c177967d5bf4aa24bd19583745a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _poolObject: {fileID: -8597529243964511879}
+  bossCreate: {fileID: 0}
+--- !u!114 &5799176318385743518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772087364770496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f61816d79780c84c91f031e2aba6085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mobInfo: {fileID: -587757219719870426}
+  target: {fileID: 0}
+  characterHealth: {fileID: 0}
+--- !u!114 &1622913539008071274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772087364770496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7862422ad7b85b641aeabf55f6d0449d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mobHealth: {fileID: 7517741328108751007}
+--- !u!114 &7517741328108751007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772087364770496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 221e2741e6471784bba20b24f665c18d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mobInfo: {fileID: -587757219719870426}
+  _mobDeath: {fileID: 8086170596820381952}
+  _death: {fileID: 8086170596820381952}
+--- !u!114 &-587757219719870426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772087364770496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ff3282f3672ee94db3db0a6bb947a75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mob: {fileID: 11400000, guid: 75d956819729dcd46a4c77e618bfe9c3, type: 2}
+--- !u!136 &1819194464121889932
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772087364770496}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.1, z: 0}
 --- !u!1 &1776941223250416
 GameObject:
   m_ObjectHideFlags: 0

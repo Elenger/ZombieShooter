@@ -1,21 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private Transform _bulletSpawner;
-    [SerializeField] private Gun _gun;
+    [SerializeField] private Gun _gunType;
     private int _bulletCount;
     private int _currentBulletCount;
     private float _shootingSpeed;
     private float _reloadTime;
     private float _delay;
+    private Pool<PoolObject> pool;
+    public Bullet bulletType;
 
     private void Start()
     {
-        GunChange(_gun);
+        GunChange(_gunType);
+        pool = new Pool<PoolObject>(new PrefabFactory<PoolObject>(_bulletPrefab));
     }
 
     void Update()
@@ -23,8 +24,9 @@ public class Shoot : MonoBehaviour
         float currentTime = Time.time;
         if (Input.GetButton("Fire1") && currentTime >= _delay)
         {
-            Instantiate(_bulletPrefab, _bulletSpawner.position, _bulletSpawner.rotation);
-            Debug.Log("Bullet was shooted");
+            GameObject newBullet =  SpawnBullet();
+            AccelerateBullet(newBullet);
+
             _currentBulletCount -= 1;
             if (_currentBulletCount == 0)
             {
@@ -44,5 +46,24 @@ public class Shoot : MonoBehaviour
         _shootingSpeed = gun.shootingSpeed;
         _bulletCount = gun.bulletCount;
         _currentBulletCount = _bulletCount;
+    }
+
+    private GameObject SpawnBullet()
+    {
+        PoolObject poolObject = pool.Take();
+        GameObject bullet = poolObject.gameObject;
+        bullet.SetActive(true);
+        bullet.GetComponent<PoolObject>().pool = pool; //need optimization
+
+        return bullet;
+    }
+
+    public void AccelerateBullet(GameObject bullet)
+    {
+        Rigidbody rigidbody = bullet.GetComponent<Rigidbody>();
+        rigidbody.velocity = Vector3.zero;
+        bullet.transform.position = _bulletSpawner.position;
+        bullet.transform.rotation = Quaternion.identity;
+        rigidbody.AddRelativeForce(_bulletSpawner.forward * bulletType.flightSpeed);
     }
 }
