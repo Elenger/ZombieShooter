@@ -58,12 +58,13 @@ public class Shoot : MonoBehaviour
         return bullet;
     }
 
-    public void AccelerateBullet(GameObject bullet)
+    private void AccelerateBullet(GameObject bullet)
     {
         Rigidbody rigidbody = bullet.GetComponent<Rigidbody>();
-        rigidbody.velocity = Vector3.zero;
         bullet.transform.position = _bulletSpawner.position;
         bullet.transform.rotation = Quaternion.identity;
-        rigidbody.AddRelativeForce(_bulletSpawner.forward * bulletType.flightSpeed);
+        rigidbody.velocity = _bulletSpawner.forward * bulletType.flightSpeed;
+        // rigidbody.AddRelativeForce(_bulletSpawner.forward * bulletType.flightSpeed);
     }
+
 }

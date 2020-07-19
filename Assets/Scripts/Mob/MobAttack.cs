@@ -3,10 +3,10 @@
 public class MobAttack : MonoBehaviour
 {
     private const float _attackDistance = 5f;
-    private const float _attackSpeed = 2.5f;
+    private const float _attackDelay = 2.5f;
     [SerializeField] private MobInfo _mobInfo;
     private int _damage;
-    private float _delay;
+    private float _nextAttackTime;
     [HideInInspector] public Transform target;
     [HideInInspector] public CharacterHealth characterHealth;
 
@@ -18,7 +18,7 @@ public class MobAttack : MonoBehaviour
     private void Update()
     {
         float currentTime = Time.time;
-        if (currentTime >= _delay)
+        if (currentTime >= _nextAttackTime)
         {
             Vector3 targetPosition = target.position;
             float _distanceDifference = Vector3.Distance(targetPosition, transform.position);
@@ -26,7 +26,7 @@ public class MobAttack : MonoBehaviour
             if (_distanceDifference <= _attackDistance)
             {
                 characterHealth.TakeDamage(_damage);
-                _delay = currentTime + _attackSpeed;
+                _nextAttackTime = currentTime + _attackDelay;
             }
         }
     }

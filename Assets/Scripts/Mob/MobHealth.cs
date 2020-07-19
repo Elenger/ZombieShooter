@@ -8,7 +8,7 @@ public class MobHealth : MonoBehaviour
 
     void Start()
     {
-        _health = _mobInfo.GetHealth();
+        Intialization();
     }
 
     public void TakeDamage(int damage)
@@ -18,7 +18,7 @@ public class MobHealth : MonoBehaviour
         if (_health < 1) _death.onDeath();
     }
 
-    public void RestoreHealth()
+    public void Intialization()
     {
         _health = _mobInfo.GetHealth();
     }

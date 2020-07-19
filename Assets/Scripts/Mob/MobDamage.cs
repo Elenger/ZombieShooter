@@ -2,7 +2,7 @@
 
 public class MobDamage : MonoBehaviour
 {
-    [SerializeField] MobHealth _mobHealth;
+    [SerializeField] private MobHealth _mobHealth;
 
     private void OnTriggerEnter(Collider other)
     {

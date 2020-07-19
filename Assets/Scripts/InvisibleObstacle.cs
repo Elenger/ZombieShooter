@@ -18,26 +18,27 @@ public class InvisibleObstacle : MonoBehaviour
         Ray rayToCharacter = new Ray(cameraPosition, directionToCharacter);
 
 
-        if (Physics.Raycast(rayToCharacter, out RaycastHit hit, Mathf.Infinity))
+        if (Physics.Raycast(rayToCharacter, out RaycastHit hit, Mathf.Infinity)) //layer
         {
+            GameObject hitObject = hit.transform.gameObject;
             if (hit.transform.TryGetComponent(out Renderer renderer))
             {
-                if (_previousObject != hit.transform.gameObject && _previousObject != null)
+                if (_previousObject != hitObject && _previousObject != null)
                 {
-                    _previousMaterial.SetFloat("_Opacity", 1f);
+                    _previousMaterial.SetFloat("_Opacity", 1f);//cash id
 
-                    _previousObject = hit.transform.gameObject;
+                    _previousObject = hitObject;
                     _previousMaterial = renderer.material;
                     _previousMaterial.SetFloat("_Opacity", 0.8f);
                 }
-                else if (_previousObject != hit.transform.gameObject)
+                else if (_previousObject != hitObject)
                 {
-                    _previousObject = hit.transform.gameObject;
+                    _previousObject = hitObject;
                     _previousMaterial = _previousObject.GetComponent<Renderer>().material;
                     _previousMaterial.SetFloat("_Opacity", 0.8f);
                 }
             }
-            else if (_previousObject != null && _previousObject != hit.transform.gameObject)
+            else if (_previousObject != null && _previousObject != hitObject)
             {
                 _previousMaterial.SetFloat("_Opacity", 1f);
             }

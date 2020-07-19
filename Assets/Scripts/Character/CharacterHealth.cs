@@ -8,7 +8,7 @@ public class CharacterHealth : MonoBehaviour
 
     void Start()
     {
-        _health = _defaultHealth;
+        Intialization();
     }
 
     public void TakeDamage(int damage)
@@ -18,7 +18,7 @@ public class CharacterHealth : MonoBehaviour
         if (_health < 1) _characterDeath.Death();
     }
 
-    public void RestoreHealth()
+    public void Intialization()
     {
         _health = _defaultHealth;
     }
