@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BulletRetun : MonoBehaviour
 {
@@ -10,7 +8,7 @@ public class BulletRetun : MonoBehaviour
 
     private void Update()
     {
-        if(_enableTime + _bulletLifeTime > Time.time)
+        if(_enableTime < Time.time - _bulletLifeTime)
         {
             _poolObject.ReturnToPool();
         }

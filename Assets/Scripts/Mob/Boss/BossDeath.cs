@@ -1,4 +1,5 @@
-﻿public class BossDeath : Death
+﻿using UnityEngine;
+public class BossDeath : Death
 {
     public WaveController waveController;
 

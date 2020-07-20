@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CharacterAim : MonoBehaviour
 {
@@ -11,7 +9,7 @@ public class CharacterAim : MonoBehaviour
     {
         Ray rayCamera = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(rayCamera, out RaycastHit hit, _layerMask))
+        if (Physics.Raycast(rayCamera, out RaycastHit hit, Mathf.Infinity, _layerMask))
         {
             Vector3 differenceMouseToCharacter = hit.point - transform.position;
             differenceMouseToCharacter.y = 0f;

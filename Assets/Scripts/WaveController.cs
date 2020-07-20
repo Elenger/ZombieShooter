@@ -6,6 +6,7 @@ public class WaveController : MonoBehaviour
     private const int _mobCountIncrease = 5;
     [SerializeField] private BossCreate _bossCreate;
     [SerializeField] private MobCreate _mobCreate;
+    [SerializeField] private GameObject _victoryPanel;
     private int _mobCountInWave = 10;
     private int _waveNumber = 0;
 
@@ -18,7 +19,7 @@ public class WaveController : MonoBehaviour
     {
         if (_waveNumber == _waveCount)
         {
-            Debug.Log("GameOver");
+            _victoryPanel.SetActive(true);
             return;
         }
 

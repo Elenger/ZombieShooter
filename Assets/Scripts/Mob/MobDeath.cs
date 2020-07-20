@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-
 public class MobDeath : Death
 {
     [SerializeField] private PoolObject _poolObject;

@@ -3,7 +3,8 @@
 public class CharacterHealth : MonoBehaviour
 {
     [SerializeField] CharacterDeath _characterDeath;
-    private const int _defaultHealth = 100;
+    [SerializeField] private CharacterHealthBar _characterHealthBar;
+    private const int _defaultHealth = 500;
     private int _health;
 
     void Start()
@@ -14,6 +15,8 @@ public class CharacterHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         _health -= damage;
+
+        _characterHealthBar.SetHealthBarValue(_health);
 
         if (_health < 1) _characterDeath.Death();
     }

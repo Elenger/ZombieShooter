@@ -2,7 +2,7 @@
 
 public class MobAttack : MonoBehaviour
 {
-    private const float _attackDistance = 5f;
+    private const float _attackDistance = 3f;
     private const float _attackDelay = 2.5f;
     [SerializeField] private MobInfo _mobInfo;
     private int _damage;

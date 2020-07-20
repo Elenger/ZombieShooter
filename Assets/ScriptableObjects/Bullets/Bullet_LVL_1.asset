@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Bullet_LVL_1
   m_EditorClassIdentifier: 
   damage: 50
-  flightSpeed: 15
+  flightSpeed: 30

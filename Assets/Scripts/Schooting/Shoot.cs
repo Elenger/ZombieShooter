@@ -53,7 +53,7 @@ public class Shoot : MonoBehaviour
         PoolObject poolObject = pool.Take();
         GameObject bullet = poolObject.gameObject;
         bullet.SetActive(true);
-        bullet.GetComponent<PoolObject>().pool = pool; //need optimization
+        bullet.GetComponent<PoolObject>().pool = pool;
 
         return bullet;
     }
@@ -64,7 +64,5 @@ public class Shoot : MonoBehaviour
         bullet.transform.position = _bulletSpawner.position;
         bullet.transform.rotation = Quaternion.identity;
         rigidbody.velocity = _bulletSpawner.forward * bulletType.flightSpeed;
-        // rigidbody.AddRelativeForce(_bulletSpawner.forward * bulletType.flightSpeed);
     }
-
 }
