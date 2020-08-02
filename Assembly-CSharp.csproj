@@ -66,19 +66,29 @@
     <Compile Include="Assets\Scripts\Bullet\BulletInfo.cs" />
     <Compile Include="Assets\Scripts\Bullet\BulletRetun.cs" />
     <Compile Include="Assets\Scripts\Character\CharacterAim.cs" />
+    <Compile Include="Assets\Scripts\Character\CharacterAnimation.cs" />
     <Compile Include="Assets\Scripts\Character\CharacterDeath.cs" />
     <Compile Include="Assets\Scripts\Character\CharacterHealth.cs" />
     <Compile Include="Assets\Scripts\Character\CharacterMovement.cs" />
+    <Compile Include="Assets\Scripts\Character\CharacterSound.cs" />
+    <Compile Include="Assets\Scripts\EventHub.cs" />
     <Compile Include="Assets\Scripts\Gun\Gun.cs" />
+    <Compile Include="Assets\Scripts\Interface\CanvasChecker.cs" />
     <Compile Include="Assets\Scripts\Interface\CharacterHealthBar.cs" />
     <Compile Include="Assets\Scripts\Interface\Exit.cs" />
     <Compile Include="Assets\Scripts\Interface\OnLoseWinPanelEnable.cs" />
     <Compile Include="Assets\Scripts\Interface\Pause.cs" />
+    <Compile Include="Assets\Scripts\Interface\ShowBulletCount.cs" />
+    <Compile Include="Assets\Scripts\Interface\ShowLosePanel.cs" />
+    <Compile Include="Assets\Scripts\Interface\ShowMobCount.cs" />
+    <Compile Include="Assets\Scripts\Interface\ShowWaveNumber.cs" />
+    <Compile Include="Assets\Scripts\Interface\ShowWinPanel.cs" />
     <Compile Include="Assets\Scripts\InvisibleObstacle.cs" />
     <Compile Include="Assets\Scripts\Mob\Boss\BossCreate.cs" />
     <Compile Include="Assets\Scripts\Mob\Boss\BossDeath.cs" />
     <Compile Include="Assets\Scripts\Mob\Death.cs" />
     <Compile Include="Assets\Scripts\Mob\Mob.cs" />
+    <Compile Include="Assets\Scripts\Mob\MobAnimation.cs" />
     <Compile Include="Assets\Scripts\Mob\MobAttack.cs" />
     <Compile Include="Assets\Scripts\Mob\MobCreate.cs" />
     <Compile Include="Assets\Scripts\Mob\MobDamage.cs" />
@@ -86,33 +96,43 @@
     <Compile Include="Assets\Scripts\Mob\MobHealth.cs" />
     <Compile Include="Assets\Scripts\Mob\MobInfo.cs" />
     <Compile Include="Assets\Scripts\Mob\MobNavMesh.cs" />
+    <Compile Include="Assets\Scripts\Mob\MobReturn.cs" />
+    <Compile Include="Assets\Scripts\Mob\MobSound.cs" />
+    <Compile Include="Assets\Scripts\MobInitialization.cs" />
+    <Compile Include="Assets\Scripts\NewGame.cs" />
     <Compile Include="Assets\Scripts\Pool\Factory\IFactory.cs" />
     <Compile Include="Assets\Scripts\Pool\Factory\PrefabFactory.cs" />
     <Compile Include="Assets\Scripts\Pool\Pool.cs" />
     <Compile Include="Assets\Scripts\Pool\PoolObject.cs" />
-    <Compile Include="Assets\Scripts\Restart.cs" />
     <Compile Include="Assets\Scripts\Schooting\Shoot.cs" />
-    <Compile Include="Assets\Scripts\Sound\SoundController.cs" />
+    <Compile Include="Assets\Scripts\Sound\SoundVolume.cs" />
     <Compile Include="Assets\Scripts\WaveController.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\UMotionEditor\Shaders\WiresOnly.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\UMotionEditor\Shaders\UnlitLine.shader" />
+    <None Include="Assets\UMotionEditor\Shaders\UnlitDashedLine.shader" />
     <None Include="Assets\NavMeshComponents\ProjectSettings\ProjectVersion.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\UMotionEditor\Shaders\CameraLit.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\UMotionEditor\Shaders\VertexColorUnlit.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\UMotionEditor\Shaders\ColorUnlit.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\UMotionEditor\Shaders\ColorUnlitTransparent.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/orion/Desktop/Programming/Unity/Projects/ZombieShooter/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
@@ -370,6 +390,9 @@
     </Reference>
     <Reference Include="UnityEngine.XRModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UMotionApplication">
+      <HintPath>C:/Users/orion/Desktop/Programming/Unity/Projects/ZombieShooter/Assets/UMotionEditor/Plugins/Application/UMotionApplication.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.7f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -733,6 +756,14 @@
     <ProjectReference Include="NavMeshComponentsExamples.csproj">
       <Project>{09AEF3BA-F4E0-7F7C-A4DD-354AD759A8CA}</Project>
       <Name>NavMeshComponentsExamples</Name>
+    </ProjectReference>
+    <ProjectReference Include="UMotionSourceApplication.csproj">
+      <Project>{75D8F931-093F-AB35-5352-94831B253CA4}</Project>
+      <Name>UMotionSourceApplication</Name>
+    </ProjectReference>
+    <ProjectReference Include="UMotionSourceEditor.csproj">
+      <Project>{C1483783-31ED-3B6B-2C21-45D037A36217}</Project>
+      <Name>UMotionSourceEditor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

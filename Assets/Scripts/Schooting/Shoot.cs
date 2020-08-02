@@ -5,6 +5,8 @@ public class Shoot : MonoBehaviour
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private Transform _bulletSpawner;
     [SerializeField] private Gun _gunType;
+    [SerializeField] private CharacterSound _characterSound;
+    [SerializeField] private ShowBulletCount _showBulletCount;
     private int _bulletCount;
     private int _currentBulletCount;
     private float _shootingSpeed;
@@ -22,12 +24,15 @@ public class Shoot : MonoBehaviour
     void Update()
     {
         float currentTime = Time.time;
-        if (Input.GetButton("Fire1") && currentTime >= _delay)
+        if (Input.GetButton("Fire1") && currentTime >= _delay && !CanvasChecker.isThisUI)
         {
             GameObject newBullet =  SpawnBullet();
             AccelerateBullet(newBullet);
+            _characterSound.CharacterShot_Sound();
 
             _currentBulletCount -= 1;
+            _showBulletCount.ShowCount(_currentBulletCount);
+
             if (_currentBulletCount == 0)
             {
                 _delay = currentTime + _reloadTime;
@@ -46,6 +51,9 @@ public class Shoot : MonoBehaviour
         _shootingSpeed = gun.shootingSpeed;
         _bulletCount = gun.bulletCount;
         _currentBulletCount = _bulletCount;
+
+        _showBulletCount.SetReloadTime(_reloadTime);
+        _showBulletCount.SetDefaultBulletCount(_bulletCount);
     }
 
     private GameObject SpawnBullet()
