@@ -8,6 +8,7 @@ public class MobCreate : MonoBehaviour
     [SerializeField] private Transform[] _spawnPoints;
     [SerializeField] private BossCreate _bossCreate;
     [SerializeField] private CharacterHealth _characterHealth;
+    [SerializeField] private ShowMobCount _showMobCount;
     private Pool<PoolObject> pool;
     private List<Pool<PoolObject>> _poolList;
 
@@ -33,9 +34,11 @@ public class MobCreate : MonoBehaviour
 
             mob.SetActive(true);
             mob.transform.position = randomSpawnPoint;
-            mob.GetComponent<PoolObject>().pool = pool; //need optimization
+            mob.GetComponent<PoolObject>().pool = pool;
             mob.GetComponent<MobNavMesh>().target = _target;
-            mob.GetComponent<MobDeath>().bossCreate = _bossCreate;
+            MobDeath mobDeath = mob.GetComponent<MobDeath>();
+            mobDeath.bossCreate = _bossCreate;
+            mobDeath.showMobCount = _showMobCount;
             MobAttack mobAttack = mob.GetComponent<MobAttack>();
             mobAttack.target = _target;
             mobAttack.characterHealth = _characterHealth;

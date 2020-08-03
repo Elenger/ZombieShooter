@@ -6,12 +6,15 @@ public class WaveController : MonoBehaviour
     private const int _mobCountIncrease = 5;
     [SerializeField] private BossCreate _bossCreate;
     [SerializeField] private MobCreate _mobCreate;
-    [SerializeField] private GameObject _victoryPanel;
+    [SerializeField] private ShowWinPanel _showWinPanel;
+    [SerializeField] private ShowWaveNumber _showWaveNumber;
+    [SerializeField] private ShowMobCount _showMobCount;
     private int _mobCountInWave = 10;
     private int _waveNumber = 0;
 
     private void Start()
     {
+        _showWaveNumber.SetMaxWaveCount(_waveCount);
         StartWave();
     }
 
@@ -19,7 +22,7 @@ public class WaveController : MonoBehaviour
     {
         if (_waveNumber == _waveCount)
         {
-            _victoryPanel.SetActive(true);
+            _showWinPanel.ShowWin();
             return;
         }
 
@@ -29,6 +32,9 @@ public class WaveController : MonoBehaviour
         _mobCreate.Create(_mobCountInWave);
 
         _waveNumber += 1;
+        _showWaveNumber.ShowNumber(_waveNumber);
+
+        _showMobCount.SetMobCountInWave(_mobCountInWave);
         _mobCountInWave += _mobCountIncrease;
     }
 }
