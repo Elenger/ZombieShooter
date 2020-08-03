@@ -95,10 +95,10 @@
     <Compile Include="Assets\Scripts\Mob\MobDeath.cs" />
     <Compile Include="Assets\Scripts\Mob\MobHealth.cs" />
     <Compile Include="Assets\Scripts\Mob\MobInfo.cs" />
+    <Compile Include="Assets\Scripts\Mob\MobInitialization.cs" />
     <Compile Include="Assets\Scripts\Mob\MobNavMesh.cs" />
     <Compile Include="Assets\Scripts\Mob\MobReturn.cs" />
     <Compile Include="Assets\Scripts\Mob\MobSound.cs" />
-    <Compile Include="Assets\Scripts\MobInitialization.cs" />
     <Compile Include="Assets\Scripts\NewGame.cs" />
     <Compile Include="Assets\Scripts\Pool\Factory\IFactory.cs" />
     <Compile Include="Assets\Scripts\Pool\Factory\PrefabFactory.cs" />
