@@ -97,14 +97,15 @@
     <Compile Include="Assets\Scripts\Mob\MobInfo.cs" />
     <Compile Include="Assets\Scripts\Mob\MobInitialization.cs" />
     <Compile Include="Assets\Scripts\Mob\MobNavMesh.cs" />
-    <Compile Include="Assets\Scripts\Mob\MobReturn.cs" />
     <Compile Include="Assets\Scripts\Mob\MobSound.cs" />
     <Compile Include="Assets\Scripts\NewGame.cs" />
     <Compile Include="Assets\Scripts\Pool\Factory\IFactory.cs" />
     <Compile Include="Assets\Scripts\Pool\Factory\PrefabFactory.cs" />
     <Compile Include="Assets\Scripts\Pool\Pool.cs" />
     <Compile Include="Assets\Scripts\Pool\PoolObject.cs" />
+    <Compile Include="Assets\Scripts\Restart.cs" />
     <Compile Include="Assets\Scripts\Schooting\Shoot.cs" />
+    <Compile Include="Assets\Scripts\Sound\SoundController.cs" />
     <Compile Include="Assets\Scripts\Sound\SoundVolume.cs" />
     <Compile Include="Assets\Scripts\WaveController.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />

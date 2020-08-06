@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: -7223598522302023090}
   - component: {fileID: -5633901196354993598}
   - component: {fileID: -8452685732924982189}
-  - component: {fileID: 1727807417202786590}
   - component: {fileID: -4573804881095523927}
   m_Layer: 13
   m_Name: Mob_orcWarriorMale
@@ -133,6 +132,7 @@ MonoBehaviour:
   _mobSound: {fileID: -8452685732924982189}
   _mobInitialization: {fileID: -4573804881095523927}
   bossCreate: {fileID: 0}
+  showMobCount: {fileID: 0}
 --- !u!114 &-674985127431818119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,19 +425,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mobDeath_Sound: {fileID: -5633901196354993598}
   _mobAttack_Sound: {fileID: -7223598522302023090}
---- !u!114 &1727807417202786590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1009295489438026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e73e2ea664da6b84d8e529c1603c8173, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _poolObject: {fileID: 1720682574323298540}
 --- !u!114 &-4573804881095523927
 MonoBehaviour:
   m_ObjectHideFlags: 0

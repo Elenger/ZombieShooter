@@ -1072,7 +1072,6 @@ GameObject:
   - component: {fileID: 4464292589033448593}
   - component: {fileID: -4081627437148613077}
   - component: {fileID: -7102728671535946555}
-  - component: {fileID: -8297779570091383323}
   - component: {fileID: 1133521112872901226}
   m_Layer: 13
   m_Name: Mob_orcWarriorFemale
@@ -1182,6 +1181,7 @@ MonoBehaviour:
   _mobSound: {fileID: -7102728671535946555}
   _mobInitialization: {fileID: 1133521112872901226}
   bossCreate: {fileID: 0}
+  showMobCount: {fileID: 0}
 --- !u!114 &972760794748969599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1474,19 +1474,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mobDeath_Sound: {fileID: -4081627437148613077}
   _mobAttack_Sound: {fileID: 4464292589033448593}
---- !u!114 &-8297779570091383323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1895674993587318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e73e2ea664da6b84d8e529c1603c8173, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _poolObject: {fileID: -8867495983142339404}
 --- !u!114 &1133521112872901226
 MonoBehaviour:
   m_ObjectHideFlags: 0

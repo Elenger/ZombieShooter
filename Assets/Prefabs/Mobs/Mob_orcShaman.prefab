@@ -1196,7 +1196,6 @@ GameObject:
   - component: {fileID: -5244026690456877605}
   - component: {fileID: -5468388614042725542}
   - component: {fileID: 4710778354779707386}
-  - component: {fileID: 2822769981588184109}
   - component: {fileID: -1082608823665986232}
   m_Layer: 13
   m_Name: Mob_orcShaman
@@ -1306,6 +1305,7 @@ MonoBehaviour:
   _mobSound: {fileID: 4710778354779707386}
   _mobInitialization: {fileID: -1082608823665986232}
   bossCreate: {fileID: 0}
+  showMobCount: {fileID: 0}
 --- !u!114 &4198189691775830894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1598,19 +1598,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mobDeath_Sound: {fileID: -5468388614042725542}
   _mobAttack_Sound: {fileID: -5244026690456877605}
---- !u!114 &2822769981588184109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1880296544152820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e73e2ea664da6b84d8e529c1603c8173, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _poolObject: {fileID: 1675645421701287140}
 --- !u!114 &-1082608823665986232
 MonoBehaviour:
   m_ObjectHideFlags: 0

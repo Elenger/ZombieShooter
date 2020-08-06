@@ -34,7 +34,7 @@ public class MobCreate : MonoBehaviour
 
             mob.SetActive(true);
             mob.transform.position = randomSpawnPoint;
-            mob.GetComponent<PoolObject>().pool = pool;
+            mob.GetComponent<PoolObject>().pool = randomPool;
             mob.GetComponent<MobNavMesh>().target = _target;
             MobDeath mobDeath = mob.GetComponent<MobDeath>();
             mobDeath.bossCreate = _bossCreate;
